@@ -18,6 +18,9 @@ import java.util.Map;
  * Output: [0,1]
  * Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
  *
+ * Input: nums = [3,2,4], target = 6
+ * Output: [1,2]
+ *
  * https://leetcode.com/problems/two-sum/
  * https://www.youtube.com/watch?v=BoHO04xVeU0
  * https://www.youtube.com/watch?v=KLlXCFG5TnA => NeetCode
@@ -28,6 +31,11 @@ public class L01_TwoSum {
     @Test
     @DisplayName("hash-map")
     public void two_sum_hash_map() {
+
+        //[1,2]
+        String result_2 = Arrays.toString(twoSum_hashMap(new int[]{3, 2, 4}, 6));
+        System.out.println(result_2);
+
         //[1,3]
         String result_0 = Arrays.toString(twoSum_hashMap(new int[]{2, 1, 5, 3}, 4));
         System.out.println(result_0);
@@ -35,10 +43,6 @@ public class L01_TwoSum {
         //[0,1]
         String result_1 = Arrays.toString(twoSum_hashMap(new int[]{2, 7, 11, 15}, 9));
         System.out.println(result_1);
-
-        //[1,2]
-        String result_2 = Arrays.toString(twoSum_hashMap(new int[]{3, 2, 4}, 6));
-        System.out.println(result_2);
 
         //[0,1]
         String result_3 = Arrays.toString(twoSum_hashMap(new int[]{3, 3}, 6));

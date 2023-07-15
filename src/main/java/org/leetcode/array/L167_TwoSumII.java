@@ -5,12 +5,13 @@ import org.junit.jupiter.api.Test;
 
 /**
  * #Array #TwoPointers #BinarySearch
- *
  * https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
- * https://www.youtube.com/watch?v=cQ1Oz4ckceM
- * https://www.youtube.com/watch?v=sAQT4ZrUfWo
  *
+ * note: in L01_TwoSum, the input is not in sorted order, here we can
+ * come up with another better approach
  *
+ * https://www.youtube.com/watch?v=cQ1Oz4ckceM => NeetCode
+ * https://www.youtube.com/watch?v=sAQT4ZrUfWo => NickWhite
  *
  * Given a 1-indexed array of integers numbers that is already `sorted` in non-decreasing order,
  * find two numbers such that they add up to a specific target number.
@@ -44,10 +45,11 @@ public class L167_TwoSumII {
             int sum = numbers[L] + numbers[R];
 
             if (sum > target) {
-                R -= 1;
+                R--;
             } else if (sum < target) {
-                L += 1;
+                L--;
             } else {
+                // if equal
                 return new int[]{L+1, R+1};
             }
         }

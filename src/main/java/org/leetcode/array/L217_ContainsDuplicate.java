@@ -7,8 +7,10 @@ import java.util.HashSet;
 
 /**
  * #Array #HashTable #Sorting
- *
  * https://leetcode.com/problems/contains-duplicate/
+ *
+ * https://www.youtube.com/watch?v=4oZsPXG9B94
+ * https://www.youtube.com/watch?v=3OamzN90kPg => NeetCode
  *
  * Given an integer array nums, return true if any value appears at least twice in the array,
  * and return false if every element is distinct.
@@ -16,10 +18,6 @@ import java.util.HashSet;
  *
  * Input: nums = [1,2,3,1]
  * Output: true
- *
- *
- * https://www.youtube.com/watch?v=4oZsPXG9B94
- * https://www.youtube.com/watch?v=3OamzN90kPg => NeetCode
  *
  */
 public class L217_ContainsDuplicate {
@@ -32,12 +30,12 @@ public class L217_ContainsDuplicate {
 
     // time complexity
     public static boolean containsDuplicate(int[] nums) {
-        HashSet<Integer> numbers = new HashSet<>();
-        for (int i = 0; i < nums.length; i++) {
-            if (numbers.contains(nums[i])) {
+        HashSet<Integer> set = new HashSet<>();
+        for (int num : nums) {
+            if (set.contains(num)) {
                 return true;
             }
-            numbers.add(nums[i]);
+            set.add(num);
         }
         return false;
     }

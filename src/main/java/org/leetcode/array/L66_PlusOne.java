@@ -57,10 +57,12 @@ public class L66_PlusOne {
         int n = digits.length-1;
 
         for (int i = n; i >= 0; i--) {
+
             if (digits[i] < 9) {
                 digits[i] ++;
                 return digits;
             }
+
             digits[i] = 0;
         }
 

@@ -4,8 +4,11 @@ import org.junit.jupiter.api.Test;
 
 /**
  * #Array #DynamicProgramming
- *
  * https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+ *
+ * https://www.youtube.com/watch?v=1pkOgXD63yU => NeetCode => using sliding window two pointers approach
+ * https://www.youtube.com/watch?v=3RHCb8LY-X4 => NickWhite
+ *
  *
  * Day:             1 2 3 4 5 6
  * Input: prices = [7,1,5,3,6,4]
@@ -14,12 +17,16 @@ import org.junit.jupiter.api.Test;
  * Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
  *
  *
- * We need to find out the maximum difference (which will be the maximum profit) between two numbers in the given array.
- * Also, the second number (selling price) must be larger than the first one (buying price).
+ * You are given an array prices where prices[i] is the price of a given stock on the ith day.
+ *
+ * You want to maximize your profit by choosing a single day to buy one stock and choosing a
+ * different day in the future to sell that stock.
+ *
+ * Return the maximum profit you can achieve from this transaction.
+ * If you cannot achieve any profit, return 0.
  *
  *
- * https://www.youtube.com/watch?v=1pkOgXD63yU => NeetCode => using sliding window two pointers approach
- * https://www.youtube.com/watch?v=3RHCb8LY-X4 => NickWhite
+
  */
 public class L121_BestTimeBuySellStock {
 
