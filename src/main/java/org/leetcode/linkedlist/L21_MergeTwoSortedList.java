@@ -5,20 +5,21 @@ import org.leetcode.common.ListNode;
 
 /**
  * #LinkedList #Recursion
- *
  * https://leetcode.com/problems/merge-two-sorted-lists/
+ *
+ * https://www.youtube.com/watch?v=KVf1Uuqfv8E
+ * https://www.youtube.com/watch?v=XIdigk956u0
  *
  * You are given the heads of two sorted linked lists list1 and list2.
  * Merge the two lists in a one sorted list.
- * The list should be made by splicing together the nodes of the first two lists.
+ *
+ * Return the head of the merged linked list.
  *
  * 1 -> 2 -> 4
  * 1 -> 3 -> 4
  * 1 -> 1 -> 2 -> 3 -> 4 -> 4
  *
  *
- * https://www.youtube.com/watch?v=KVf1Uuqfv8E
- * https://www.youtube.com/watch?v=XIdigk956u0
  */
 public class L21_MergeTwoSortedList {
 
@@ -49,7 +50,6 @@ public class L21_MergeTwoSortedList {
             }
 
             curr = curr.next;
-
         }
 
         if (list1 != null) {
@@ -61,6 +61,7 @@ public class L21_MergeTwoSortedList {
             curr.next = list2;
             list2 = list2.next;
         }
+
         return dummy.next;
     }
 }

@@ -7,24 +7,18 @@ import org.leetcode.common.ListNode;
 /**
  *
  * #LinkedList #Math #Recursion
- *
  * https://leetcode.com/problems/add-two-numbers
+ *
  * https://www.youtube.com/watch?v=wgFPrzTjm7s
  * https://www.youtube.com/watch?v=aM4Iv7eEr2o
  * https://github.com/MisterBooo/LeetCodeAnimation/blob/master/0002-Add-Two-Numbers/Animation/Animation.gif
  *
+ *  You are given two non-empty linked lists representing two non-negative integers.
+ *  The digits are stored in reverse order, and each of their nodes contains a single digit.
+ *  Add the two numbers and return the sum as a linked list.
  *
  * Input: l1 = [2,4,3], l2 = [5,6,4] ,note: input are stored in "reverse order"
  * Output: [7,0,8]
- *
- * Elementary Math Explanation:
- *    342
- *  + 465
- *  -----
- *    807
- *
- * since list is already in reverse order its helpful and code works like below
- * add 3342 + 465
  *
  * 5 -> 6 -> 4
  * 2 -> 4 -> 3 -> 3
@@ -38,9 +32,15 @@ public class L02_AddTwoNumbers {
     @Test
     @DisplayName("add two numbers in node using elementary math")
     public void addTwoNumber(){
+
         //
-        ListNode l1 = new ListNode(2, new ListNode(4, new ListNode(3, new ListNode(1, new ListNode(2)))));
+        ListNode l1 = new ListNode(2, new ListNode(4, new ListNode(3)));
         ListNode l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
+        addTwoNumbers(l1, l2);
+
+        //
+        l1 = new ListNode(2, new ListNode(4, new ListNode(3, new ListNode(1, new ListNode(2)))));
+        l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
         addTwoNumbers(l1, l2);
 
 

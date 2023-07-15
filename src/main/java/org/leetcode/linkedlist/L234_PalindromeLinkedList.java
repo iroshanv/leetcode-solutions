@@ -7,14 +7,15 @@ import org.leetcode.common.ListNode;
  * #LinkedList #TwoPointers #Stack #Recursion
  *
  * https://leetcode.com/problems/palindrome-linked-list/
+ * https://www.youtube.com/watch?v=wk4QsvwQwdQ
+ * https://www.youtube.com/watch?v=yOzXms1J6Nk
+ *
  * https://github.com/MisterBooo/LeetCodeAnimation/blob/master/0234-isPalindrome/Animation/solved01.gif
  * https://github.com/MisterBooo/LeetCodeAnimation/blob/master/0234-isPalindrome/Animation/solved02.gif
  *
  *
- * Given the head of a singly linked list, return true if it is a
- * palindrome
+ * Given the head of a singly linked list, return true if it is a palindrome
  * or false otherwise.
- *
  *
  * Input = 1 -> 2 -> 2 -> 1
  *
@@ -26,8 +27,6 @@ import org.leetcode.common.ListNode;
  *  left  1 -> 2
  *
  *
- * https://www.youtube.com/watch?v=wk4QsvwQwdQ
- * https://www.youtube.com/watch?v=yOzXms1J6Nk
  */
 public class L234_PalindromeLinkedList {
 
@@ -49,10 +48,11 @@ public class L234_PalindromeLinkedList {
             left = left.next;
         }
 
-        left = reverse(left);
-        right = head;
+        right = left; // point to mid element
+        right = reverse(right);
+        left = head;
 
-        while (left != null) {
+        while (right != null) {
             if (left.val != right.val) {
                 return false;
             }

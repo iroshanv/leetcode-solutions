@@ -1,5 +1,7 @@
 package others;
 
+import org.leetcode.common.ListNode;
+
 import java.lang.reflect.Array;
 import java.util.*;
 
@@ -243,6 +245,7 @@ public class PlayArea_0 {
         return map;
     }
 
+    // 12
     public int[] sortedSquares(int[] num) {
 
         if (num.length == 0) {
@@ -271,6 +274,173 @@ public class PlayArea_0 {
 
     private static int sqr(int num) {
         return (int) Math.pow(num, 2);
+    }
+
+
+    // 13
+    public ListNode addTwoNumbers(ListNode L1, ListNode L2) {
+
+        int carry = 0;
+        int rem = 0;
+
+        ListNode dummyHead = new ListNode(0);
+        ListNode cur = dummyHead;
+
+        while ( L1 != null || L2 != null) {
+
+            int x = L1 != null ? L1.val : 0;
+            int y = L1 != null ? L2.val : 0;
+
+            int sum = x + y + carry;
+            carry = sum / 10;
+            rem = sum % 10;
+
+            cur.next = new ListNode(rem);
+            cur = cur.next;
+
+            if(L1 != null) L1 = L1.next;
+            if(L2 != null) L2 = L2.next;
+        }
+
+        if (carry > 0) {
+            cur.next = new ListNode(carry);
+        }
+
+
+
+        return dummyHead.next;
+    }
+
+
+    // 14
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+
+        ListNode slow = dummy;
+        ListNode fast = dummy;
+
+
+        for (int i = 0; i <= n; i++) {
+            fast = fast.next;
+        }
+
+        while (fast != null) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+
+        slow.next = slow.next.next;
+
+        return dummy.next;
+    }
+
+    // 15
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+
+        ListNode dummy = new ListNode(0);
+        ListNode curr = dummy;
+
+        while (list1 != null && list2 != null) {
+
+            if (list1.val < list2.val) {
+                curr.next = list1;
+
+                curr = curr.next;
+                list1 = list2.next;
+            } else {
+                curr.next = list2;
+
+                curr = curr.next;
+                list2 = list2.next;
+            }
+        }
+
+        if (list1 != null) {
+            curr.next = list1;
+            list1 = list1.next;
+        }
+
+        if (list2 != null) {
+            curr.next = list2;
+            list2 = list2.next;
+        }
+
+        return dummy.next;
+    }
+
+
+    // 16
+    public boolean hasCycle(ListNode head) {
+
+        if (head == null) return false;
+
+        ListNode slow = head;
+        ListNode fast = head.next;
+
+        while (slow != fast) {
+
+            if (slow == null || fast.next == null) {
+                return false;
+            }
+
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return true;
+    }
+
+    // 17
+    public ListNode reverseList(ListNode head) {
+
+        ListNode prev = null;
+
+        while (head != null) {
+            ListNode curr = head.next;
+            head.next = prev;
+
+            prev = head;
+            head = curr;
+        }
+
+        return prev;
+    }
+
+
+    // 18
+    public boolean isPalindrome(ListNode head) {
+        ListNode left = head;
+        ListNode right = head;
+
+        // traverse to mid element
+        while ( right != null && right.next != null ) {
+            right = right.next.next;
+            left = left.next;
+        }
+
+        right = left; // point to mid element
+        right = reverseList(right);
+        left = head;
+
+        while (right != null) {
+            if (left.val != right.val) {
+                return false;
+            }
+            left = left.next;
+            right = right.next;
+        }
+
+        return true;
+    }
+
+    // 19
+
+    public void deleteNode(ListNode node) {
+        ListNode nextNode = node.next;
+        node.val = nextNode.val;
+        node.next = nextNode.next;
     }
 
 

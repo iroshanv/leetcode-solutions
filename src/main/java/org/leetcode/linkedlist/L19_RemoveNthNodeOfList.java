@@ -6,23 +6,22 @@ import org.leetcode.common.ListNode;
  /**
   * #LinkedList #TwoPointers
   *
- * https://leetcode.com/problems/remove-nth-node-from-end-of-list/
- *
- * Given the head of a linked list,
- * remove the nth node `from the end of the list` and return its head.
+  * https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+  * https://www.youtube.com/watch?v=XtYEEvrhemI
+  * https://www.youtube.com/watch?v=XVuQxVej6y8 => NeetCode
   *
- *                4 3 2 1 0
- * Input: head = [1,2,3,4,5], n = 2
- * Output: [1,2,4,5]
- *
- * Explanation:
- * n = 2
- * 1 -> 2 -> 3 -> 4 -> 5
- * 1 -> 2 -> 3 ------> 5
- *
- * https://www.youtube.com/watch?v=XtYEEvrhemI
- * https://www.youtube.com/watch?v=XVuQxVej6y8 => NeetCode
- */
+  * Given the head of a linked list,
+  * remove the nth node `from the end of the list` and return its head.
+  *
+  *                4 3 2 1 0
+  * Input: head = [1,2,3,4,5], n = 2
+  * Output: [1,2,4,5]
+  *
+  * Explanation:
+  * n = 2
+  * 1 -> 2 -> 3 -> 4 -> 5
+  * 1 -> 2 -> 3 ------> 5
+  **/
 public class L19_RemoveNthNodeOfList {
 
     /**

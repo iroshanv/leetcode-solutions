@@ -7,15 +7,21 @@ import org.leetcode.common.ListNode;
  * #HashTable #LinkedList #TwoPointers
  *
  * https://leetcode.com/problems/linked-list-cycle/
+ *
  * https://www.youtube.com/watch?v=gBTe7lFR3vc => NeetCode
  * https://www.youtube.com/watch?v=6OrZ4wAy4uE => NickWhite
  * https://github.com/MisterBooo/LeetCodeAnimation/blob/master/0141-Linked-List-Cycle/Animation/Animation.gif
  *
  * Input: head = [3,2,0,-4], pos = 1
  * Output: true
- * Explanation: There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).
+ * Explanation: There is a cycle in the linked list,
+ * where the tail connects to the 1st node (0-indexed).
  *
  * Given head, the head of a linked list, determine if the linked list has a cycle in it.
+ * There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer.
+ * Internally, pos is used to denote the index of the node that tail's next pointer is connected to.
+ *
+ * Note that pos is not passed as a parameter.
  */
 public class L141_LinkedListCycle {
 
@@ -49,6 +55,7 @@ public class L141_LinkedListCycle {
 
         while (slow != fast) {
 
+            // fast.next can be null because we are doing fast.next.next
             if (fast == null || fast.next == null) {
                 return false;
             }
