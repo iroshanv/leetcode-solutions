@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
  * #String #Trie
  *
  * https://leetcode.com/problems/longest-common-prefix/
+ * https://www.youtube.com/watch?v=bl8ue-dTxgs.s0
  *
  * Write a function to find the longest common prefix string amongst an array of strings.
  * If there is no common prefix, return an empty string "".
@@ -18,7 +19,7 @@ import org.junit.jupiter.api.Test;
  * Explanation: There is no common prefix among the input strings.
  *
  *
- * https://www.youtube.com/watch?v=bl8ue-dTxgs.s0
+
  */
 public class L14_LongestCommonPrefix {
 

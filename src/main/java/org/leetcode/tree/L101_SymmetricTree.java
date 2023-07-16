@@ -11,7 +11,8 @@ import org.leetcode.common.TreeNode;
  * https://www.youtube.com/watch?v=Mao9uzxwvmc
  *
  *
- * Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center).
+ * Given the root of a binary tree, check whether
+ * it is a mirror of itself (i.e., symmetric around its center).
  *
  */
 public class L101_SymmetricTree {

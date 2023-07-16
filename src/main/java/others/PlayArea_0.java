@@ -1,6 +1,8 @@
 package others;
 
+import com.sun.source.tree.Tree;
 import org.leetcode.common.ListNode;
+import org.leetcode.common.TreeNode;
 
 import java.lang.reflect.Array;
 import java.util.*;
@@ -436,7 +438,6 @@ public class PlayArea_0 {
     }
 
     // 19
-
     public void deleteNode(ListNode node) {
         ListNode nextNode = node.next;
         node.val = nextNode.val;
@@ -445,8 +446,218 @@ public class PlayArea_0 {
 
 
 
+    // 20
+    public int searchInsert(int[] nums, int target) {
+
+        if (target > nums[nums.length-1]) return nums.length;
+
+        int left = 0;
+        int right = nums.length - 1;
+
+        while (left <= right) {
+
+            int mid = (left + right) / 2;
+            if (nums[mid] == target) {
+                return mid;
+            }
+
+            if (target > nums[mid]) {
+                left = mid  + 1;
+            }else {
+                right = mid - 1;
+            }
+
+        }
+
+        return left;
+    }
+
+    // 21
+    public List<Integer> inorderTraversal(TreeNode root) {
+
+        List<Integer> list = new ArrayList<>();
+        if (root == null) {
+            return list;
+        }
+            inorderTraversal(root.left);
+            list.add(root.val);
+            inorderTraversal(root.right);
+
+        return list;
+    }
+
+    // 22
+    public int binarySearch(int[] nums, int target) {
+
+        int L = 0;
+        int R = nums.length - 1;
+
+        while ( L <= R ) {
+            int mid = (L + R) / 2;
+
+            if (nums[mid] == target) return mid;
+
+            if (target > nums[mid]) {
+                L = mid + 1;
+            }else {
+                R = mid - 1;
+            }
+        }
+
+        return -1;
+    }
+
+    // 23
+    public static boolean isSameTree(TreeNode p, TreeNode q) {
+        if (p == null && q == null) return true;
+        if (p == null || q == null) return false;
+
+        return (p.val == q.val)
+                && isSameTree(p.left, q.left)
+                && isSameTree(p.right, p.right);
+    }
+
+    // 24
+    public static boolean isMirror(TreeNode t1, TreeNode t2) {
+
+        if (t1 == null && t2 == null) return true;
+        if (t1 == null || t2 == null) return false;
+
+        return (t1.val == t2.val)
+                && isMirror(t1.left, t2.right)
+                && isMirror(t1.right, t2.left);
+
+    }
+
+    public static int maxDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
+        int left = maxDepth(root.left);
+        int right = maxDepth(root.right);
 
 
+        return Math.max(left, right) + 1;
+
+    }
+
+    public int lengthOfLongestSubstring(String s) {
+
+        int winSize = 0;
+        int L = 0;
+        int R = 0;
+
+        HashSet<Character> set = new HashSet<>();
+        while (R < s.length()) {
+            char ch = s.charAt(R);
+
+            if (!set.contains(ch)) {
+                set.add(ch);
+                R++;
+
+                winSize = Math.max(set.size(), winSize);
+            }
+
+            set.remove(ch);
+            L++;
+        }
+
+        return winSize;
+    }
+
+    public static String longestCommonPrefix(String[] str) {
+
+        if (str.length == 0) return "";
+
+        String prefix = str[0];
+
+        for (int i = 0; i < str.length; i++) {
+
+            if (str[i].indexOf(prefix) != 0) {
+                prefix = prefix.substring(0, prefix.length()-1);
+            }
+
+        }
+        return prefix;
+    }
+
+    public int strStr(String haystack, String needle) {
+
+        if (haystack.length() == 1) return 0;
+
+        // window size
+        int winSize = needle.length();
+
+        for (int L = 0, R = winSize; R <= haystack.length(); L++, R++) {
+
+            if (haystack.substring(L, R).equals(needle)) {
+                return L;
+            }
+        }
+        return -1;
+    }
+
+    public boolean isPalindrome(String s) {
+
+        int i = 0;
+        int j = s.length() -1;
+        while (i <= j) {
+            if (s.charAt(i) != s.charAt(j)) {
+                return false;
+            }
+
+            j++;
+            i--;
+
+        }
+        return true;
+    }
+
+    public static boolean isAnagram(String s, String t) {
+
+        if (s.length() != t.length()) return false;
+
+        int[] char_counts = new int[26];
+
+        for (int i = 0; i < s.length(); i++) {
+
+            char_counts[s.charAt(i) - 'a']++;
+            char_counts[t.charAt(i) - 'a']--;
+
+        }
+
+        for (int count : char_counts) {
+            if(count != 0) {
+                return false;
+            }
+        }
+
+        return true;
+
+
+    }
+
+    public static int longestPalindrome(String s) {
+
+        int[] counts = new int[128];
+        for (char c: s.toCharArray()) {
+            counts[c]++;
+        }
+
+        int result = 0;
+        for (int count : counts) {
+
+            result += count / 2 * 2;
+
+            if (result % 2 == 0 && count % 2 == 1) {
+                result++;
+            }
+
+        }
+
+        return result;
+    }
 
 
 }

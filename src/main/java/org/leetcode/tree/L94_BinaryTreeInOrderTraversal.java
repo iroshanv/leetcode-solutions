@@ -9,16 +9,15 @@ import java.util.Stack;
 
 /**
  * #Stack #Tree #DFS #BinaryTree
+ * https://leetcode.com/problems/binary-tree-inorder-traversal
+ *
+ * https://www.youtube.com/watch?v=WZwNoTm_9d8
+ * https://github.com/MisterBooo/LeetCodeAnimation/blob/master/0094-Binary-Tree-Inorder-Traversal/Animation/Animation2.gif
  *
  * the inorder traversal algorithm visits nodes in the following order:
  * Traverse the left subtree
  * Visit the root node
  * Traverse the right subtree
-
-
- * https://leetcode.com/problems/binary-tree-inorder-traversal
- * https://www.youtube.com/watch?v=WZwNoTm_9d8
- * https://github.com/MisterBooo/LeetCodeAnimation/blob/master/0094-Binary-Tree-Inorder-Traversal/Animation/Animation2.gif
  */
 public class L94_BinaryTreeInOrderTraversal {
 

@@ -7,11 +7,11 @@ import org.leetcode.common.TreeNode;
 /**
  * #Array #DivideAndConquer #Tree #BinarySearchTree #BinaryTree
  * https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
+ * https://www.youtube.com/watch?v=12omz-VAyRk
  *
  *
- * Given an integer array nums where the elements are sorted in ascending order, convert it to a
- * height-balanced
- * binary search tree
+ * Given an integer array nums where the elements are sorted in ascending order,
+ * convert it to a height-balanced binary search tree
  *
  *
  * Input: nums = [1,3]
@@ -37,7 +37,6 @@ public class L108_ArrayToBinarySearchTree {
      *     / \   / \
      *    1   3 5   7
      *
-     *    https://www.youtube.com/watch?v=12omz-VAyRk
      */
     public static TreeNode sortedArrayToBST(int[] nums) {
         if (nums.length == 0) return null;

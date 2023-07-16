@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 /**
  * #String #TwoPointers #StringMatching
  *
- *
  * https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/
  *
  * Given two strings needle and haystack, return the index of the first occurrence of needle in haystack,
@@ -42,6 +41,10 @@ public class L28_FirstOccurrenceInString {
     @Test
     @DisplayName("using sliding window")
     public void firstOccurrenceInString_slidingWindow() {
+
+        System.out.println(strStr_slidingWindow("abc", "c"));
+        System.out.println(strStr_slidingWindow("a", "a"));
+
         //0
         System.out.println(strStr_slidingWindow("sadbutsad", "sad"));
 
@@ -62,14 +65,16 @@ public class L28_FirstOccurrenceInString {
 
     private static int strStr_slidingWindow(String haystack, String needle) {
 
+        if (haystack.length() == 1) return 0;
+
         int winSize = needle.length();
 
-        for (int i = 0, j = winSize;
-             j < haystack.length();
-             i++, j++)
+        for (int L = 0, R = winSize;
+             R <= haystack.length();
+             L++, R++)
         {
-            if (haystack.substring(i, j).equals(needle)) {
-                return i;
+            if (haystack.substring(L, R).equals(needle)) {
+                return L;
             }
         }
 

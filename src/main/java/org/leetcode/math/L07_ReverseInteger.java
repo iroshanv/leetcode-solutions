@@ -44,15 +44,15 @@ public class L07_ReverseInteger {
 
         int rev = 0;
         while (x != 0) {
-            // pop operation
-            final int pop = x % 10;
+
+            final int rem = x % 10;
             x = x / 10;
 
-            if(rev > intMaxDiv10 || (rev == intMaxDiv10 && pop > 7)) return 0;
-            if(rev < intMinDiv10 || (rev == intMinDiv10 && pop < -8)) return 0;
+            if(rev > intMaxDiv10 || (rev == intMaxDiv10 && rem > 7)) return 0;
+            if(rev < intMinDiv10 || (rev == intMinDiv10 && rem < -8)) return 0;
 
             // push operation
-            rev = rev * 10 + pop;
+            rev = rev * 10 + rem;
         }
         return rev;
     }

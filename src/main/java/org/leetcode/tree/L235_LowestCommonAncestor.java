@@ -6,8 +6,13 @@ import org.leetcode.common.TreeNode;
 
 /**
  * #Tree, #DFS, #BinarySearchTree, #BinaryTree
+ * https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree
  *
- * Given a binary search tree (BST), find the lowest common ancestor (LCA) node of two given nodes in the BST.
+ * https://www.youtube.com/watch?v=6POfA8fruxI
+ * https://www.youtube.com/watch?v=gs2LMfuOR9k&t => good explanation from NeetCode
+ *
+ * Given a binary search tree (BST),
+ * find the lowest common ancestor (LCA) node of two given nodes in the BST.
  *
  *
  * Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
@@ -15,9 +20,7 @@ import org.leetcode.common.TreeNode;
  * Explanation: The LCA of nodes 2 and 8 is 6.
  *
  *
- * https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree
- * https://www.youtube.com/watch?v=6POfA8fruxI
- * https://www.youtube.com/watch?v=gs2LMfuOR9k&t => good explanation from NeetCode
+
  */
 public class L235_LowestCommonAncestor {
 

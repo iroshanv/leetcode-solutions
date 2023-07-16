@@ -10,13 +10,14 @@ import java.util.Arrays;
  *
  * https://leetcode.com/problems/reverse-string/
  * https://github.com/MisterBooo/LeetCodeAnimation/blob/master/0344-Reverse-String/Animation/Animation.gif
+ * https://en.wikipedia.org/wiki/In-place_algorithm
+ * https://www.youtube.com/watch?v=NA--2JiDaeQ
+ *
  *
  * Write a function that reverses a string. The input string is given as an array of characters s.
  * You must do this by modifying the input array in-place with O(1) extra memory.
  *
- * https://en.wikipedia.org/wiki/In-place_algorithm
- *
- * https://www.youtube.com/watch?v=NA--2JiDaeQ
+
  */
 public class L344_ReverseString {
 

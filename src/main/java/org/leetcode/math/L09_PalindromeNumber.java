@@ -38,9 +38,9 @@ public class L09_PalindromeNumber {
         final int actualNum = x;
         int rev = 0;
         while (x != 0) {
-            final int pop = x % 10;
+            final int rem = x % 10;
             x = x / 10;
-            rev = rev * 10 + pop;
+            rev = rev * 10 + rem;
         }
         return (actualNum == rev);
     }

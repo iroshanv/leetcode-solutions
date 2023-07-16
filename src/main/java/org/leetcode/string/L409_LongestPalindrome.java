@@ -23,7 +23,9 @@ public class L409_LongestPalindrome {
 
     @Test
     public void longestPalindrome_Test() {
-        System.out.println("longest palindrome length = " + longestPalindrome("abccccdd"));
+        System.out.println("longest palindrome length = " + longestPalindrome("a"));
+        System.out.println("longest palindrome length = " + longestPalindrome("bbbba"));
+//        System.out.println("longest palindrome length = " + longestPalindrome("abccccdd"));
     }
 
 
@@ -35,12 +37,13 @@ public class L409_LongestPalindrome {
      *  b    = 1
      *  a    = 1
      *
-     *  For each letter, say it occurs v times. We know we have v // 2 * 2 letters that can be partnered for sure.
-     *  For example, if we have 'aaaaa', then we could have 'aaaa' partnered, which is 5 // 2 * 2 = 4 letters partnered.
+     *  For each letter, say it occurs `c` times. We know we have `c/2 * 2` letters that can be partnered for sure.
+     *  For example, if we have 'aaaaa', then we could have 'aaaa' partnered, which is 5/2 * 2 = 4 letters partnered.
      *
-     *  At the end, if there was any v % 2 == 1, then that letter could have been a unique center.
+     *  At the end, if there was any c % 2 == 1, then that letter could have been a unique center.
      *  Otherwise, every letter was partnered.
-     *  To perform this check, we will check for v % 2 == 1 and ans % 2 == 0,
+     *
+     *  To perform this check, we will check for c % 2 == 1 and ans % 2 == 0,
      *  the latter meaning we haven't yet added a unique center to the answer.
      */
     public static int longestPalindrome(String s) {
@@ -55,6 +58,9 @@ public class L409_LongestPalindrome {
         int result = 0;
         for(int count : counts) {
 
+            // if we have 3 aaa,
+            // 3/2 = 1 * 2 = 2;
+            // even number of character which can be palindrome
             result += count / 2 * 2;
 
             if (result % 2 == 0 && count % 2 == 1) {

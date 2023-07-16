@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
  *
  * https://leetcode.com/problems/valid-anagram/
  * https://github.com/MisterBooo/LeetCodeAnimation/blob/master/0242-Valid-Anagram/Animation/242.gif
+ * https://www.youtube.com/watch?v=IRN1VcA8CGc
  *
  * Given two strings s and t, return true if t is an anagram of s, and false otherwise.
  *
@@ -21,7 +22,6 @@ import org.junit.jupiter.api.Test;
  * Output: false
  *
  *
- * https://www.youtube.com/watch?v=IRN1VcA8CGc
  */
 public class L242_ValidAnagram {
     @Test

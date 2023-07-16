@@ -6,13 +6,11 @@ import org.leetcode.common.TreeNode;
 
 /**
  * #DFS, #BFS, #Tree, #BinaryTree
- *
+ * https://leetcode.com/problems/same-tree/
  * https://www.youtube.com/watch?v=vRbbcKXCxOw
- * https://leetcode.com/problems/same-tree/description/
  *
- *  Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.
- *
- *
+ * Two binary trees are considered the same if they are structurally identical,
+ * and the nodes have the same value.
  *
  * time complexity O(p+q)
  */

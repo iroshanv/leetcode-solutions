@@ -14,14 +14,14 @@ import org.leetcode.common.TreeNode;
  * https://github.com/MisterBooo/LeetCodeAnimation/blob/master/0104-Maximum-Depth-Of-Binary-Tree/Animation/Animation2.gif
  *
  *
- *
+ * Given the root of a binary tree, return its maximum depth.
  */
 public class L104_MaximumDepthBinaryTree {
 
     /**
      *         3               1 + max(l, r) = 1
      *       /   \             1 + max(1, 2) = 3
-     *   (1)9     20(2)
+     *   (1)9     20(1 + 1)
      *           / \
      *       (1)15   7(1)
      */

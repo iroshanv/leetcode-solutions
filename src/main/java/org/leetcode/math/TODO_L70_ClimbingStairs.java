@@ -18,7 +18,7 @@ import org.junit.jupiter.api.Test;
  * 2. 1 step + 2 steps
  * 3. 2 steps + 1 step
  */
-public class L70_ClimbingStairs {
+public class TODO_L70_ClimbingStairs {
 
     @Test
     public void test() {
