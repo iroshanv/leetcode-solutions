@@ -1,9 +1,9 @@
-package org.leetcode.topinterview150;
+package org.leetcode.easy;
 
 import org.junit.jupiter.api.Test;
 
 /**
- *
+ * #Array #TwoPointers #Sorting
  * https://leetcode.com/problems/merge-sorted-array/description
  * https://www.youtube.com/watch?v=P1Ic85RarKY
  * https://github.com/MisterBooo/LeetCodeAnimation/blob/master/0088-Merge-Sorted-Array/Animation/Animation.gif
