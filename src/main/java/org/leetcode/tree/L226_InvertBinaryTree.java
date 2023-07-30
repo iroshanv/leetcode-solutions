@@ -35,11 +35,13 @@ import org.leetcode.common.TreeNode;
  */
 public class L226_InvertBinaryTree {
 
+    TreeNode watcher;
+
     @Test
     public void invertBinaryTreeTest() {
         TreeNode root = new TreeNode(4, new TreeNode(2, new TreeNode(1), new TreeNode(3)), new TreeNode(7, new TreeNode(6), new TreeNode(9)));
+        watcher = root;
         invertTree(root);
-
     }
 
     public TreeNode invertTree(TreeNode root) {
