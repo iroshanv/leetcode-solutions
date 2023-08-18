@@ -4,23 +4,23 @@ import java.util.HashMap;
 import java.util.Map;
 
 final public class Commons {
-    public static int[] reverseArray(int[] numbers, int sIndex, int eIndex) {
-        while (sIndex < eIndex) {
-            int temp = numbers[sIndex];
-            numbers[sIndex] = numbers[eIndex];
-            numbers[eIndex] = temp;
+    public static int[] reverseArray(int[] numbers, int L, int R) {
+        while (L < R) {
+            int temp = numbers[L];
+            numbers[L] = numbers[R];
+            numbers[R] = temp;
 
-            sIndex++;
-            eIndex--;
+            L++;
+            R--;
         }
 
         return numbers;
     }
 
-    public static int[] swap(int[] numbers, int r, int l) {
-        final int temp = numbers[r];
-        numbers[r] = numbers[l];
-        numbers[l] = temp;
+    public static int[] swap(int[] numbers, int L, int R) {
+        final int temp = numbers[L];
+        numbers[L] = numbers[R];
+        numbers[R] = temp;
         return numbers;
     }
 
