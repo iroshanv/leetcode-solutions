@@ -26,7 +26,8 @@ public class L383_RansomNote {
         HashMap<Character, Integer> magazineMap = frequencyMap(magazine);
 
         for (Character ch : ransomNote.toCharArray()) {
-            if ( !(magazineMap.containsKey(ch) && ransomNoteMap.get(ch) <= magazineMap.get(ch)) )  {
+            if ( !magazineMap.containsKey(ch) &&
+                    !(ransomNoteMap.get(ch) <= magazineMap.get(ch)) )  {
                 return false;
             }
         }
