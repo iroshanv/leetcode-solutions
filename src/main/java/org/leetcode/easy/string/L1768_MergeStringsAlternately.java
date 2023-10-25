@@ -3,15 +3,12 @@ package org.leetcode.easy.string;
 import org.junit.jupiter.api.Test;
 
 /**
- * https://leetcode.com/problems/merge-strings-alternately/
- *
- * https://www.youtube.com/watch?v=LECWOvTo-Sc => NeetCode
- *
- *
+ * <a href="https://leetcode.com/problems/merge-strings-alternately/" />
+ * <a href="https://www.youtube.com/watch?v=LECWOvTo-Sc" />
  * #TwoPointer #String #Companies
+ * #LeetCode75
  */
 public class L1768_MergeStringsAlternately {
-
 
     @Test
     public void mergeAlternatelyTest(){
@@ -25,22 +22,21 @@ public class L1768_MergeStringsAlternately {
         char[] chars2 = word2.toCharArray();
         StringBuilder mergedString = new StringBuilder(chars1.length + chars2.length);
 
+        int i = 0, j = 0;
+        while ( i < chars1.length && j < chars2.length ) {
+            mergedString.append(chars1[i]);
+            mergedString.append(chars2[j]);
 
-        int X = 0, Y = 0;
-        while ( X < chars1.length && Y < chars2.length) {
-            mergedString.append(chars1[X]);
-            mergedString.append(chars2[Y]);
-
-            X++;
-            Y++;
+            i++;
+            j++;
         }
 
-        if (X < chars1.length) {
-            mergedString.append(word1.substring(X));
+        if (i < chars1.length) {
+            mergedString.append(word1.substring(i));
         }
 
-        if (Y < chars2.length) {
-            mergedString.append(word2.substring(Y));
+        if (j < chars2.length) {
+            mergedString.append(word2.substring(j));
         }
 
         return mergedString.toString();
