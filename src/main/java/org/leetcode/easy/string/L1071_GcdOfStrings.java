@@ -42,7 +42,7 @@ public class L1071_GcdOfStrings {
         for (int i = Math.min(len1, len2);
              i >= 1 ;
              i--) {
-            // find the i = no-of-chars that divides both string
+            // find the `i = no-of-chars` that divides both string
 
             if (isValid(str1, str2, i)) {
                 return str1.substring(0, i);
